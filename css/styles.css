@@ -7,12 +7,14 @@
 
 body {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: center; /* Centering content vertically */
+    justify-content: center; /* Centering content horizontally */
     min-height: 100vh;
     background-image: url('../asset/apa.jpg');
     background-size: cover;
     background-position: center;
+    overflow: hidden; /* Avoid horizontal scrollbars */
+    padding: 0 20px; /* Ensure some padding on small screens */
 }
 
 header {
@@ -39,10 +41,10 @@ header {
     color: rgb(247, 245, 245);
     text-decoration: none;
     font-weight: 500;
-    margin-left: 40px; 
+    margin-left: 40px;
 }
 
-.navigation a::after { /* Removed extra space between 'a' and '::after' */
+.navigation a::after {
     content: '';
     position: absolute;
     left: 0;
@@ -65,7 +67,7 @@ header {
     width: 130px;
     height: 50px;
     background: transparent;
-    border: 2px solid rgb(119, 91, 36); /* Fixed the 'em' to 'px' in border */
+    border: 2px solid rgb(119, 91, 36);
     outline: none;
     border-radius: 6px;
     cursor: pointer;
@@ -76,12 +78,15 @@ header {
     transition: background-color 0.5s, color 0.5s;
 }
 
-.navigation .btnlogin-popup:hover { /* Corrected the selector for the hover state */
+.navigation .btnlogin-popup:hover {
     background-color: aliceblue;
     color: black;
 }
 
 .wrapper {
+    display: flex; /* Centering the form horizontally */
+    justify-content: center; /* Centering the form horizontally */
+    align-items: center; /* Centering the form vertically */
     position: relative;
     width: 400px;
     height: 440px;
@@ -90,11 +95,10 @@ header {
     border-radius: 20px;
     backdrop-filter: blur(20px);
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
     overflow: hidden;
     cursor: pointer;
+    margin: auto;
+    margin-top: 50px; /* Adjust this value to move the form down */
 }
 
 .wrapper.active-Popup {
@@ -104,6 +108,10 @@ header {
 .wrapper .form-box {
     width: 100%;
     padding: 40px;
+    display: flex;
+    flex-direction: column; /* Ensures content stacks vertically */
+    align-items: center; /* Centers items horizontally */
+    justify-content: center; /* Centers items vertically */
     position: absolute;
     transition: transform .18s ease;
 }
@@ -126,9 +134,9 @@ header {
 
 .wrapper .icon-close {
     position: absolute;
-    top: 0;
-    right: 0;
-    width: 45px; /* Adjust this as needed */
+    top: 20px; /* Adjusted for better placement */
+    right: 20px; /* Adjusted for better placement */
+    width: 45px;
     height: 45px;
     background: black;
     font-size: 2em;
@@ -136,10 +144,9 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    cursor: pointer; /* Adds a pointer cursor on hover */
-    z-index: 100; /* Ensures the close button is on top */
+    cursor: pointer;
+    z-index: 100;
 }
-
 
 .form-box h2 {
     font-size: 2em;
@@ -159,7 +166,7 @@ header {
 .input-box input:valid ~ label {
     top: -10px;
     font-size: 0.8em;
-    color: #333; /* Perubahan warna saat fokus */
+    color: #333;
 }
 
 .input-box label {
@@ -182,25 +189,6 @@ header {
     outline: none;
     font-size: 1em;
     color: black;
-}
-
-.input-box .icon {
-    position: absolute;
-    right: 8px;
-    font-size: 1.2em;
-    color: black;
-    line-height: 50px;
-}
-
-
-.input-box input {
-    width: 100%;
-    height: 100%;
-    background: transparent;
-    border: none;
-    outline: none;
-    font-size: 1em;
-    color: black;
     font-weight: 600;
     padding: 0 35px 0 5px;
 }
@@ -210,7 +198,7 @@ header {
     right: 8px;
     font-size: 1.2em;
     color: black;
-    line-height: 57px;
+    line-height: 50px;
 }
 
 .remember-forgot {
@@ -315,11 +303,14 @@ header {
 @media (max-width: 768px) {
     body {
         display: block;
-        padding: 20px;
+        margin-top: 110px;
+        margin-bottom: auto;
+        padding: 80px;
+        align-items: center;
     }
 
     header {
-        padding: 20px;
+        padding: 80px;
     }
 
     .navigation a {
@@ -343,7 +334,8 @@ header {
     }
 
     .input-box {
-        margin: 15px 0;
+        margin: 40px;
+        padding: 40px;
     }
 
     .input-box input {
@@ -377,12 +369,13 @@ header {
     }
 
     .wrapper {
-        width: 250px;
-        height: 320px;
+        width: 280px;
+        height: 340px;
+        margin-top: 20px; /* Adjust for better positioning on very small screens */
     }
 
     .form-box h2 {
-        font-size: 1.2em;
+        font-size: 1.3em;
     }
 
     .input-box {
@@ -390,7 +383,7 @@ header {
     }
 
     .input-box input {
-        font-size: 0.75em;
+        font-size: 0.8em;
     }
 
     .input-box .icon {
